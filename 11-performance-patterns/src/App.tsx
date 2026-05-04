@@ -7,6 +7,7 @@ import UsersSortingWithUseMemo from './performance/memoization/use-memo/user-sor
 import ScrollTracker from './performance/throttling/scroll-tracker'
 import { useFakeUsers } from './performance/virtualization/data'
 import NonVirtualList from './performance/virtualization/non-virtual-list'
+import VirtualList from './performance/virtualization/virtual-list'
 
 function App() {
   const users = useFakeUsers() // Generate 50k users for virtualization demo
@@ -48,6 +49,10 @@ function App() {
         <div className='border rounded p-2'>
           <h1 className='text-blue-500'>Non-Virtualization</h1>
           <NonVirtualList users={users} />
+        </div>
+        <div className='border rounded p-2 mt-5'>
+          <h1 className='text-blue-500'>Virtualization</h1>
+          <VirtualList users={users} />
         </div>
       </div>
     </div>
